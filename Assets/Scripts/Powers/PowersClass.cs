@@ -2,10 +2,13 @@ using UnityEngine;
 
 public class PowersClass : MonoBehaviour
 {
-    private GameObject player;
     public float speed = 5f;
-    private SpriteRenderer spriteRenderer;
+
     protected bool isActive = false;
+
+    private GameObject player;
+    private GameObject otherPlayer;
+    private SpriteRenderer spriteRenderer;
 
     void Start()
     {
@@ -22,7 +25,7 @@ public class PowersClass : MonoBehaviour
         transform.Translate(Vector3.left * speed * Time.deltaTime);
     }
 
-    public virtual void ApplyPower(GameObject player)
+    public virtual void ApplyPower(GameObject player, GameObject otherPlayer)
     {
         isActive = true;
     }
@@ -32,14 +35,16 @@ public class PowersClass : MonoBehaviour
         if (collision.CompareTag("Player1"))
         {
             player = collision.gameObject;
-            ApplyPower(player);
+            otherPlayer = GameObject.FindGameObjectWithTag("Player2");
+            ApplyPower(player, otherPlayer);
             spriteRenderer.enabled = false;
         }
 
         if (collision.CompareTag("Player2"))
         {
             player = collision.gameObject;
-            ApplyPower(player);
+            otherPlayer = GameObject.FindGameObjectWithTag("Player1");
+            ApplyPower(player, otherPlayer);
             spriteRenderer.enabled = false;
         }
     }

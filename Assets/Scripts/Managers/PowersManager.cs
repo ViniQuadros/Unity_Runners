@@ -16,6 +16,6 @@ public class PowersManager : MonoBehaviour
         GameObject prefab = powerupPrefab[Random.Range(0, powerupPrefab.Length)];
 
         Instantiate(prefab, currentSpawn.position, Quaternion.identity);
-        Invoke(nameof(SpawnPowers), Random.Range(15f, 30f));
+        Invoke(nameof(SpawnPowers), Random.Range(10f, 20f));
     }
 }

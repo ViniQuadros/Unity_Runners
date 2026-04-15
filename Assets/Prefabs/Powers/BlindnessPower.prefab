@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2774125564575372518}
   - component: {fileID: 7692121470948560744}
   - component: {fileID: 9100645534559955118}
-  - component: {fileID: -2353741369604162994}
+  - component: {fileID: 217988570952399488}
   m_Layer: 0
   m_Name: BlindnessPower
   m_TagString: Untagged
@@ -36,6 +36,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7692121470948560744
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -81,6 +82,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 842772141466829533, guid: 9f24be9d52a130d40ba789c80566234f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -90,7 +92,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &9100645534559955118
 BoxCollider2D:
@@ -138,7 +139,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 0.4375}
   m_EdgeRadius: 0
---- !u!114 &-2353741369604162994
+--- !u!114 &217988570952399488
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,7 +148,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5677984578792169176}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5b8aa0bd2254094e98f2ec990f508c8, type: 3}
+  m_Script: {fileID: 11500000, guid: 6eddfdd9c2cded548a0f90a77e7ff634, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InvencibilityPower
+  m_EditorClassIdentifier: Assembly-CSharp::Blindness
   speed: 5
