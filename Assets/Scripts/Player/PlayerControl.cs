@@ -39,6 +39,7 @@ public class PlayerControl : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            AudioManager.Instance.PlayAudio("Jump");
         }
 
         jumpPressed = false;

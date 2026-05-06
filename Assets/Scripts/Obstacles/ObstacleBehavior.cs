@@ -27,10 +27,9 @@ public class ObstacleBehavior : MonoBehaviour
         bool canDie = playerControl.PlayerCanDie();
 
         if (!canDie)
-        {
             return;
-        }
 
+        AudioManager.Instance.PlayAudio("Hit");
         string victoryText = "";
 
         if (collision.CompareTag("Player1"))

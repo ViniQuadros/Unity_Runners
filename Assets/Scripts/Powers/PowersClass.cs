@@ -41,7 +41,9 @@ public class PowersClass : MonoBehaviour
             GetComponent<Collider2D>().enabled = false;
             spriteRenderer.enabled = false;
 
-            GameObject effect = Instantiate(pickUpEffect, transform.position, Quaternion.identity);
+            GameObject effect = Instantiate<GameObject>(pickUpEffect, transform.position, Quaternion.identity);
+
+            AudioManager.Instance.PlayAudio("PickUp");
 
             if (isP1)
             {
