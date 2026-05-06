@@ -2,7 +2,13 @@ using UnityEngine;
 
 public class ObstacleBehavior : MonoBehaviour
 {
-    private float speed = 5f;
+    private float speed;
+
+    private void Start()
+    {
+        GameObject ground = GameObject.FindGameObjectWithTag("Ground");
+        speed = ground.GetComponent<FloorMovement>().GetSpeed();
+    }
 
     void Update()
     {

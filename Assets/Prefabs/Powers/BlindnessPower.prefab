@@ -152,3 +152,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Blindness
   speed: 5
+  pickUpEffect: {fileID: 1261946658635447488, guid: 25165137191e09747a115eeac4428ae1, type: 3}

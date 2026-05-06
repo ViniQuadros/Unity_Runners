@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour
     private bool player1ready = false;
     private bool player2ready = false;
 
+    private GameObject player1;
+    private GameObject player2;
+
     private void Awake()
     {
         if (gameManagerInstance != null && gameManagerInstance != this)
@@ -32,6 +35,9 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        player1 = GameObject.FindGameObjectWithTag("Player1");
+        player2 = GameObject.FindGameObjectWithTag("Player2");
+
         PauseGame();
     }
 
@@ -84,5 +90,15 @@ public class GameManager : MonoBehaviour
     {
         playerWinCanvas.SetActive(true);
         playerWinText.text = victoryText;
+    }
+
+    public GameObject GetPlayer1()
+    {
+        return player1;
+    }
+
+    public GameObject GetPlayer2()
+    {
+        return player2;
     }
 }

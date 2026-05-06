@@ -3,6 +3,7 @@ using UnityEngine;
 public class PowersClass : MonoBehaviour
 {
     public float speed = 5f;
+    public GameObject pickUpEffect;
 
     protected bool isActive = false;
 
@@ -32,20 +33,30 @@ public class PowersClass : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player1"))
-        {
-            player = collision.gameObject;
-            otherPlayer = GameObject.FindGameObjectWithTag("Player2");
-            ApplyPower(player, otherPlayer);
-            spriteRenderer.enabled = false;
-        }
+        bool isP1 = collision.CompareTag("Player1");
+        bool isP2 = collision.CompareTag("Player2");
 
-        if (collision.CompareTag("Player2"))
+        if (isP1 || isP2)
         {
-            player = collision.gameObject;
-            otherPlayer = GameObject.FindGameObjectWithTag("Player1");
-            ApplyPower(player, otherPlayer);
+            GetComponent<Collider2D>().enabled = false;
             spriteRenderer.enabled = false;
+
+            GameObject effect = Instantiate(pickUpEffect, transform.position, Quaternion.identity);
+
+            if (isP1)
+            {
+                player = collision.gameObject;
+                otherPlayer = GameManager.gameManagerInstance.GetPlayer2();
+            }
+            else
+            {
+                player = collision.gameObject;
+                otherPlayer = GameManager.gameManagerInstance.GetPlayer1();
+            }
+
+            ApplyPower(player, otherPlayer);
+
+            Destroy(gameObject, 11f);
         }
     }
 }
